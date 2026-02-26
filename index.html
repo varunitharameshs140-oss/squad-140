@@ -376,16 +376,7 @@ grid.appendChild(card);
 });
 }
 
-function openPopup(student){
-document.getElementById("popupImg").src=student.image;
-document.getElementById("popupName").innerText=student.name;
-document.getElementById("popupRole").innerText=student.team;
-document.getElementById("popupAbout").innerText=student.about;
-document.getElementById("popupLinkedin").href=student.linkedin;
-document.getElementById("popupGithub").href=student.github;
-document.getElementById("popupEmail").href=student.email;
-document.getElementById("popupBg").style.display="flex";
-}
+
 
 function closePopup(){
 document.getElementById("popupBg").style.display="none";
