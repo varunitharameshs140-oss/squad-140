@@ -223,6 +223,11 @@ html{scroll-behavior:smooth;}
   background:black;
   color:#777;
 }
+#popupRole{
+  color:#ff3131;
+  font-weight:600;
+  letter-spacing:2px;
+}
 
 </style>
 </head>
@@ -246,17 +251,17 @@ html{scroll-behavior:smooth;}
     <h2 class="section-title">MENTORS</h2>
       <div class="mentor-grid">
 
-        <div class="mentor-card">
-            <img src="photos/campus manager.jpeg">
-            <h3>RISHWANTH THAKOOR</h3>
-            <p>Dynamic Full Stack Developer (MERN) | Proficient in Java, JavaScript, React.js, Node.js, MySQL, MongoDB, HTML, CSS .</p>
-        </div>
+        <div class="mentor-card" onclick="openPopup(mentors[0])">
+    <img src="photos/campus manager.jpeg">
+    <h3>RISHWANTH THAKOOR</h3>
+    <p>Dynamic Full Stack Developer (MERN)...</p>
+</div>
 
-        <div class="mentor-card">
-            <img src="photos/sathya ma'am.jpeg">
-            <h3>SATHYA SHREE</h3>
-            <p>M.Tech in Data Science | Deep Learning & AI Enthusiast  | Python, NLP, Flask</p>
-        </div>
+<div class="mentor-card" onclick="openPopup(mentors[1])">
+    <img src="photos/sathya ma'am.jpeg">
+    <h3>SATHYA SHREE</h3>
+    <p>M.Tech in Data Science | Deep Learning & AI Enthusiast...</p>
+</div>
 
     </div>
 </section>
@@ -308,6 +313,27 @@ AOS.init({duration:1000,once:true});
 
 <script>
 
+/* ===== SAMPLE MENTORS DATA ===== */
+const mentors = [
+{
+  name: "RISHWANTH THAKOOR",
+  team: "MENTOR",
+  image:"photos/campus manager.jpeg",
+  linkedin: "https://www.linkedin.com/in/rishwanth-thakoor",
+  github: "https://github.com/ThakoorRishwanth",
+  email: "mailto:thakoor.rishwanth@kalvium.com",
+
+  about: "Dynamic Full Stack Developer (MERN). Proficient in Java, JavaScript, React.js, Node.js, MySQL, MongoDB, HTML and CSS."
+},
+{
+  name: "SATHYA SHREE",
+  team: "MENTOR",
+  image:"photos/sathya ma'am.jpeg",
+  linkedin: "https://www.linkedin.com/in/sathya-shree-361727262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  email: "mailto:sathya.s@kalvium.com",
+  about: "M.Tech in Data Science. Deep Learning & AI Enthusiast. Skilled in Python, NLP and Flask."
+}
+];
 /* ===== SAMPLE STUDENT DATA ===== */
 const students = [
     { name: "ABINAYA V", team: "KALVIAN", image: "photos/abinaya.jpeg" ,linkedin:"https://www.linkedin.com/in/abinaya-v7/", github:"https://github.com/abinayavs140",email:"mailto:abinaya.v.s.140@kalvium.community",about:"I am a B.Tech CSE (Applied AI) first-year student at Kalvium, studying at Takshashila University. I am passionate about Artificial Intelligence and building real-world AI solutions."},
@@ -316,7 +342,7 @@ const students = [
     {name :"VEDAVARSHINI ARJI",team:"KALVIAN",image:"photos/vedha.jpeg",linkedin:"https://www.linkedin.com/in/vedavarshini-arji-8a63003b3/",github:"https://github.com/vedavarshiniarjis140-ship-it",email:"mailto:vedavarshini.arji.s.140@kalvium.community",about:"I am a B.Tech CSE (Applied AI) first-year student at Kalvium, studying at Takshashila University. I am passionate about Artificial Intelligence and building real-world AI solutions."},
     { name: "CHOWDAM MADHU LATHA", team: "KALVIAN", image: "photos/mathulatha.jpeg" ,linkedin:"https://www.linkedin.com/in/madhulatha-chowdam-94b2b93b3/", github:"https://www.linkedin.com/in/madhulatha-chowdam-94b2b93b3/",email:"mailto:madhu.latha.s.140@kalvium.community" ,about:"I am a B.Tech CSE (Applied AI) first-year student at Kalvium, studying at Takshashila University. I am passionate about Artificial Intelligence and building real-world AI solutions."},
     { name: "DEEBIKSHA P", team: "KALVIAN", image: "photos/deebiksha.jpeg",linkedin:"https://www.linkedin.com/in/deebiksha-p-3688b8377/", github:"https://github.com/deebiksha",email:"mailto:deebiksha.p.s.140@kalvium.community",about:"I am a B.Tech CSE (Applied AI) first-year student at Kalvium, studying at Takshashila University. I am passionate about Artificial Intelligence and building real-world AI solutions."},
-    { name: "DHANALAKSHMI N", team: "KALVIAN", image: "photos/dhana.jpeg" ,linkedin:"https://www.linkedin.com/in/dhanalakshmi-n-540869384/", github:"" ,email:"mailto:dhanalakshmi.n.s.140@kalvium.community",about:"I am a B.Tech CSE (Applied AI) first-year student at Kalvium, studying at Takshashila University. I am passionate about Artificial Intelligence and building real-world AI solutions."},
+    { name: "DHANALAKSHMI N", team: "KALVIAN", image: "photos/dhana.jpeg" ,linkedin:"https://www.linkedin.com/in/dhanalakshmi-n-540869384/", github:"https://github.com/Dhanalakshmi140" ,email:"mailto:dhanalakshmi.n.s.140@kalvium.community",about:"I am a B.Tech CSE (Applied AI) first-year student at Kalvium, studying at Takshashila University. I am passionate about Artificial Intelligence and building real-world AI solutions."},
     { name: "DHARSHINIPRIYA S", team: "KALVIAN", image: "photos/dharshini priya.jpeg" ,linkedin:"https://www.linkedin.com/in/dharshini-suresh-972909383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", github:"https://github.com/dharshini290",email:"mailto:dharshinipriya.s.s.140@kalvium.community",about:"I am a B.Tech CSE (Applied AI) first-year student at Kalvium, studying at Takshashila University. I am passionate about Artificial Intelligence and building real-world AI solutions." },
     { name: "ELAYARAJA G", team: "KALVIAN" , image: "photos/illayaraja.jpeg",linkedin:"https://www.linkedin.com/in/elayaraja-g-391332364/?originalSubdomain=in", github:"https://github.com/elayarajags140-commits",email:"mailto:elayarajag.s.140@kalvium.community",about:"I am a B.Tech CSE (Applied AI) first-year student at Kalvium, studying at Takshashila University. I am passionate about Artificial Intelligence and building real-world AI solutions." },
     
@@ -375,6 +401,7 @@ card.onclick=()=>openPopup(student);
 grid.appendChild(card);
 });
 }
+
 
 function openPopup(student){
 document.getElementById("popupImg").src=student.image;
